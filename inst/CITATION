@@ -1,0 +1,13 @@
+citHeader("To cite summariser in publications use:")
+
+citEntry(entry = "misc",
+  title        = "summariser: Easy calculatiuon and visualisation of
+  confidence intervals",
+  author       = personList(as.person("Conor Neilson")),
+  year         = "2017",
+
+  textVersion  =
+  paste("Conor Neilson, (2011).",
+        "summariser: Easy calculatiuon and visualisation of confidence
+        intervals")
+)
