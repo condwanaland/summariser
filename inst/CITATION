@@ -5,9 +5,7 @@ citEntry(entry = "misc",
   confidence intervals",
   author       = personList(as.person("Conor Neilson")),
   year         = "2017",
-
-  textVersion  =
-  paste("Conor Neilson, (2011).",
-        "summariser: Easy calculatiuon and visualisation of confidence
-        intervals")
+  url          = "https://github.com/condwanaland/summariser",
+  textVersion  = "C. Neilson. summariser: Easy calculation and visualisation
+  of confidence intervals. https://github.com/condwanaland/summariser"
 )
