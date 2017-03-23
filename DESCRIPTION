@@ -1,6 +1,6 @@
 Package: summariser
 Type: Package
-Title: Easy calculation and visualisation of confidence intervals
+Title: Easy Calculation and Visualisation of Confidence Intervals
 Version: 0.1.0
 Authors@R: person("Conor", "Neilson", email="condwanaland@gmail.com", role=
     c("aut", "cre"))
