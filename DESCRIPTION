@@ -6,7 +6,7 @@ Authors@R: person("Conor", "Neilson", email="condwanaland@gmail.com", role=
     c("aut", "cre"))
 Maintainer: Conor Neilson <condwanaland@gmail.com>
 Description: Functions to speed up the exploratory analysis of simple
-    datasets using dplyr and ggplot2. Functions are provided to do the 
+    datasets using 'dplyr' and 'ggplot2'. Functions are provided to do the 
     common tasks of calculating confidence intervals and visualising the 
     results. 
 License: GPL-3
