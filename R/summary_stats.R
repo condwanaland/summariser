@@ -37,7 +37,12 @@ summary_stats_new <- function(data, measure, ...){
   measure_var <- enquo(measure)
 
   dat <- group_by(data, !!!group_var)
-  dat <- summarise(dat, mean = mean(!!measure_var))
+  dat <- summarise(dat,
+                   mean = mean(!!measure_var),
+                   sd = sd(!!measure_var),
+                   n = length(!!measure_var),
+                   se = plotrix::std.error(!!measure_var),
+                   ci = plotrix::std.error(!!measure_var))
   return(dat)
 }
 
