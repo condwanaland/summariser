@@ -42,7 +42,7 @@ summary_stats_new <- function(data, measure, ...){
                    sd = sd(!!measure_var),
                    n = length(!!measure_var),
                    se = plotrix::std.error(!!measure_var),
-                   ci = plotrix::std.error(!!measure_var))
+                   ci = plotrix::std.error(!!measure_var) * qnorm(0.975))
   return(dat)
 }
 
