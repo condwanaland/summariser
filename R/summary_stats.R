@@ -31,3 +31,16 @@ summary_stats <- function(data, measure, ...) {
                ci = interp(~plotrix::std.error(x)*qnorm(0.975), x=as.name(measure)))
 }
 
+
+summary_stats_new <- function(data, measure, ...){
+  group_var <- quos(...)
+  measure_var <- enquo(measure)
+
+  dat <- group_by(data, !!!group_var)
+  dat <- summarise(dat, mean = mean(!!measure_var))
+  return(dat)
+}
+
+
+
+summary_stats_new(juvenile_morphologies, standard_length, month, age_class)
