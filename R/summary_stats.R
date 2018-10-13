@@ -22,16 +22,6 @@
 #'   summary_stats(iris, measure = "Sepal.Length", Species)
 
 
-summary_stats <- function(data, measure, ...) {
-  data %>% group_by_(.dots = lazyeval::lazy_dots(...)) %>%
-    summarise_(mean = interp(~mean(x), x= as.name(measure)),
-               sd = interp(~sd(x), x = as.name(measure)),
-               N = interp(~length(x), x = as.name(measure)),
-               se = interp(~plotrix::std.error(x), x=as.name(measure)),
-               ci = interp(~plotrix::std.error(x)*qnorm(0.975), x=as.name(measure)))
-}
-
-
 summary_stats_new <- function(data, measure, ...){
   group_var <- quos(...)
   measure_var <- enquo(measure)
@@ -47,5 +37,5 @@ summary_stats_new <- function(data, measure, ...){
 }
 
 
-
+library(fishdata)
 summary_stats_new(juvenile_morphologies, standard_length, month, age_class)
