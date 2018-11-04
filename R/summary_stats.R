@@ -26,29 +26,32 @@ summary_stats <- function(data, measure, ...){
 }
 
 
+#' @export
+summary_stats.default <- function(data, measure, ...){
+  stop("Sorry, summary_stats only provides methods for class 'data.frame' and 'grouped_df'")
+}
+
+
+#' @export
 summary_stats.data.frame <- function(data, measure, ...){
   group_var <- quos(...)
   measure_var <- enquo(measure)
 
   dat <- group_by(data, !!!group_var)
-  dat <- summarise(dat,
-                   mean = mean(!!measure_var),
-                   sd = sd(!!measure_var),
-                   n = length(!!measure_var),
-                   se = plotrix::std.error(!!measure_var),
-                   ci = plotrix::std.error(!!measure_var) * qnorm(0.975))
+
+  dat <- summary_impl(dat, measure_var)
+
   return(dat)
 }
 
 
+#' @export
 summary_stats.grouped_df <- function(data, measure){
   measure_var <- enquo(measure)
 
-  dat <- summarise(data,
-                   mean = mean(!!measure_var),
-                   sd = sd(!!measure_var),
-                   n = length(!!measure_var),
-                   se = plotrix::std.error(!!measure_var),
-                   ci = plotrix::std.error(!!measure_var) * qnorm(0.975))
+  dat <- summary_impl(data, measure_var)
+
   return(dat)
 }
+
+
