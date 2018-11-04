@@ -21,8 +21,12 @@
 #'   summary_stats(iris, measure = "Sepal.Length")
 #'   summary_stats(iris, measure = "Sepal.Length", Species)
 
+summary_stats <- function(data, measure, ...){
+  UseMethod("summary_stats")
+}
 
-summary_stats_new <- function(data, measure, ...){
+
+summary_stats.data.frame <- function(data, measure, ...){
   group_var <- quos(...)
   measure_var <- enquo(measure)
 
@@ -37,5 +41,14 @@ summary_stats_new <- function(data, measure, ...){
 }
 
 
-library(fishdata)
-summary_stats_new(juvenile_morphologies, standard_length, month, age_class)
+summary_stats.grouped_df <- function(data, measure){
+  measure_var <- enquo(measure)
+
+  dat <- summarise(data,
+                   mean = mean(!!measure_var),
+                   sd = sd(!!measure_var),
+                   n = length(!!measure_var),
+                   se = plotrix::std.error(!!measure_var),
+                   ci = plotrix::std.error(!!measure_var) * qnorm(0.975))
+  return(dat)
+}

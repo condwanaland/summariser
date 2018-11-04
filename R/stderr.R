@@ -3,7 +3,7 @@
 #' @param x A vector of numeric values
 #'
 #' @return Vector of length one
-#' @export
+#' @noRd
 #'
 #' @examples
 #' vec <- c(2, 3, 4, 5)
