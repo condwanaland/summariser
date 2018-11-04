@@ -53,5 +53,3 @@ summary_stats.grouped_df <- function(data, measure){
 
   return(dat)
 }
-
-
