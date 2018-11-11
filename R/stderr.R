@@ -14,6 +14,11 @@
 #' summarise(iris, petal_stderr = std_error(Petal.Length))
 
 std_error <- function(x){
+
+  if(length(x) < 3){
+    stop("There must be at least three observations to compute a standard error")
+  }
+
   sd(x, na.rm = TRUE)/sqrt(length(na.omit(x)))
 }
 
