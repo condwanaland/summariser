@@ -10,7 +10,7 @@
 #'
 
 summary_impl <- function(dat, measure_var){
-  dat <- summarise(dat,
+  dat <- dplyr::summarise(dat,
                    mean = mean(!!measure_var),
                    sd = sd(!!measure_var),
                    n = length(!!measure_var),
