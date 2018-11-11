@@ -2,7 +2,7 @@
 #'
 #' @param x A vector of numeric values
 #'
-#' @return Vector of length one
+#' @return Numeric vector of length one
 #' @noRd
 #'
 #' @examples
@@ -15,11 +15,13 @@
 
 std_error <- function(x){
 
-  if(length(x) < 3){
+  if (length(x) < 3){
     stop("There must be at least three observations to compute a standard error")
+  }
+
+  if (class(x) != "numeric"){
+    stop("Input must be numeric")
   }
 
   sd(x, na.rm = TRUE)/sqrt(length(na.omit(x)))
 }
-
-
