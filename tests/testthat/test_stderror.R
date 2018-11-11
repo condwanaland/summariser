@@ -15,5 +15,8 @@ test_that("throws error when too few observations", {
 vec3 <- c(5, 10, 9, 7, 15)
 
 test_that("Computes std error correctly", {
-  expect_equal(std_error(vec3), 1.6853)
+  expect_equal(std_error(vec3), 1.6853,
+               tolerance = 0.0001)
 })
+
+
