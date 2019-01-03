@@ -1,17 +1,5 @@
 context("Testing std_error function")
 
-vec1 <- c(5)
-vec2 <- c(2, 3)
-
-test_that("error is thrown when there are too few observations", {
-  expect_error(std_error(vec1),
-               "There must be at least three observations to compute a standard error",
-               fixed = TRUE)
-  expect_error(std_error(vec2),
-               "There must be at least three observations to compute a standard error",
-               fixed = TRUE)
-})
-
 
 vec_chr <- c("2", "7", "9", "13")
 vec_lgl <- c(TRUE, TRUE, TRUE, FALSE, FALSE)
