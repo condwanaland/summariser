@@ -19,5 +19,5 @@ std_error <- function(x){
     stop("Input must be numeric")
   }
 
-  sd(x, na.rm = TRUE)/sqrt(length(na.omit(x)))
+  stats::sd(x, na.rm = TRUE)/sqrt(length(stats::na.omit(x)))
 }
