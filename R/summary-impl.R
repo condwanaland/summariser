@@ -1,13 +1,12 @@
 #' summary_impl
 #'
-#'  Implementation of the actual summary statistics
+#' Implementation of the actual summary statistics
 #'
-#' @param dat
-#' @param measure_var
+#' @param dat A dataframe
+#' @param measure_var Column of dat that contains the variable to calculate statistics for
 #'
-#' @return
+#' @return A dataframe
 #' @noRd
-#'
 
 summary_impl <- function(dat, measure_var){
   dat <- dplyr::summarise(dat,

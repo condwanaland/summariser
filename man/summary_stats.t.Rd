@@ -4,7 +4,7 @@
 \alias{summary_stats.t}
 \title{Calculate summary statistics on a data frame}
 \usage{
-summary_stats.t(data, measure, ...)
+\method{summary_stats}{t}(data, measure, ...)
 }
 \arguments{
 \item{data}{a data frame}
