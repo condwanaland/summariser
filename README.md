@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/condwanaland/summariser.svg?branch=master)](https://travis-ci.org/condwanaland/summariser) [![codecov](https://codecov.io/gh/condwanaland/summariser/branch/master/graph/badge.svg)](https://codecov.io/gh/condwanaland/summariser) [![CRAN version](http://www.r-pkg.org/badges/version/summariser)](https://cran.r-project.org/package=summariser)
+
 # summariser
 
 summariser provides simple functions for calculating the most common summary statistics, particularly confidence intervals. 
