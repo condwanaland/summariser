@@ -18,8 +18,8 @@
 #' @import plotrix
 #' @import lazyeval
 #' @examples data(iris)
-#'   summary_stats(iris, measure = "Sepal.Length")
-#'   summary_stats(iris, measure = "Sepal.Length", Species)
+#'   summary_stats(iris, measure = Sepal.Length)
+#'   summary_stats(iris, measure = Sepal.Length, Species)
 
 summary_stats <- function(data, measure, ...){
   UseMethod("summary_stats")
@@ -46,10 +46,11 @@ summary_stats.data.frame <- function(data, measure, ...){
 
 
 #' @export
-summary_stats.grouped_df <- function(data, measure){
+summary_stats.grouped_df <- function(data, measure, ...){
   measure_var <- dplyr::enquo(measure)
 
   dat <- summary_impl(data, measure_var)
 
   return(dat)
 }
+

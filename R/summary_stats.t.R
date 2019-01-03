@@ -13,9 +13,12 @@
 #'   will be grouped by this variable, and summary statistics will be produced
 #'   for each group
 #' @export
-#' @examples data(iris)
-#'   summary_stats(iris, measure = "Sepal.Length")
-#'   summary_stats(iris, measure = "Sepal.Length", Species)
+#' @examples
+#' \dontrun{
+#' data(iris)
+#'   summary_stats.t(iris, measure = "Sepal.Length")
+#'   summary_stats.t(iris, measure = "Sepal.Length", Species)
+#'   }
 
 
 summary_stats.t <- function(data, measure, ...) {

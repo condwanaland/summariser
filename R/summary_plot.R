@@ -11,9 +11,12 @@
 #' @export
 #'
 #'
-#' @examples data(iris)
+#' @examples
+#' \dontrun{
+#' data(iris)
 #' sum1 <- summary_stats(iris, measure = "Sepal.Length", Species)
 #' summary_plot(sum1, x="Species", colour="Species")
+#' }
 
 
 summary_plot<-function(data, x, colour=NULL){

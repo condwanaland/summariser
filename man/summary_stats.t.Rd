@@ -25,7 +25,9 @@ Functions from dplyr are used to automate the process of
  from a t-distribution (summary_stats.t)
 }
 \examples{
+\dontrun{
 data(iris)
-  summary_stats(iris, measure = "Sepal.Length")
-  summary_stats(iris, measure = "Sepal.Length", Species)
+  summary_stats.t(iris, measure = "Sepal.Length")
+  summary_stats.t(iris, measure = "Sepal.Length", Species)
+  }
 }
