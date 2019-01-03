@@ -5,7 +5,7 @@
 summariser
 ==========
 
-`summariser` provides simple functions for calculating the most common summary statistics, particularly confidence intervals.
+`summariser` provides simple functions for calculating the most common summary statistics, particularly confidence intervals. dfvvfdfvdf
 
 ``` r
 data(iris)
