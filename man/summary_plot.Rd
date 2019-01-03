@@ -19,7 +19,9 @@ the output of a \code{summary_stats} call is input into a
  confidence intervals.
 }
 \examples{
+\dontrun{
 data(iris)
 sum1 <- summary_stats(iris, measure = "Sepal.Length", Species)
 summary_plot(sum1, x="Species", colour="Species")
+}
 }

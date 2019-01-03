@@ -18,16 +18,39 @@
 #' @import plotrix
 #' @import lazyeval
 #' @examples data(iris)
-#'   summary_stats(iris, measure = "Sepal.Length")
-#'   summary_stats(iris, measure = "Sepal.Length", Species)
+#'   summary_stats(iris, measure = Sepal.Length)
+#'   summary_stats(iris, measure = Sepal.Length, Species)
+
+summary_stats <- function(data, measure, ...){
+  UseMethod("summary_stats")
+}
 
 
-summary_stats <- function(data, measure, ...) {
-  data %>% group_by_(.dots = lazyeval::lazy_dots(...)) %>%
-    summarise_(mean = interp(~mean(x), x= as.name(measure)),
-               sd = interp(~sd(x), x = as.name(measure)),
-               N = interp(~length(x), x = as.name(measure)),
-               se = interp(~plotrix::std.error(x), x=as.name(measure)),
-               ci = interp(~plotrix::std.error(x)*qnorm(0.975), x=as.name(measure)))
+#' @export
+summary_stats.default <- function(data, measure, ...){
+  print("Sorry, summary_stats only provides methods for class 'data.frame' and 'grouped_df'")
+}
+
+
+#' @export
+summary_stats.data.frame <- function(data, measure, ...){
+  group_var <- dplyr::quos(...)
+  measure_var <- dplyr::enquo(measure)
+
+  dat <- dplyr::group_by(data, !!!group_var)
+
+  dat <- summary_impl(dat, measure_var)
+
+  return(dat)
+}
+
+
+#' @export
+summary_stats.grouped_df <- function(data, measure, ...){
+  measure_var <- dplyr::enquo(measure)
+
+  dat <- summary_impl(data, measure_var)
+
+  return(dat)
 }
 

@@ -26,6 +26,6 @@ Functions from dplyr are used to automate the process of
 }
 \examples{
 data(iris)
-  summary_stats(iris, measure = "Sepal.Length")
-  summary_stats(iris, measure = "Sepal.Length", Species)
+  summary_stats(iris, measure = Sepal.Length)
+  summary_stats(iris, measure = Sepal.Length, Species)
 }
