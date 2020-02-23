@@ -11,6 +11,9 @@ summary_stats(data, measure, type)
 
 \item{measure}{a numeric variable. Response variable - summary statistics
 will be returned for this variable}
+
+\item{type}{a string variable. Controls whether a normal or t distribution is used for CI
+calculation. Defaults to "norm".}
 }
 \description{
 Functions from dplyr are used to automate the process of
@@ -21,7 +24,8 @@ Functions from dplyr are used to automate the process of
  from a t-distribution (summary_stats.t)
 }
 \examples{
-data(iris)
-  summary_stats(iris, measure = Sepal.Length)
-  summary_stats(iris, measure = Sepal.Length, Species)
+library(summariser)
+library(dplyr)
+iris \%>\%
+  summary_stats(Sepal.Length)
 }

@@ -1,4 +1,5 @@
 context("Testing that correct numbers are returned")
+library(dplyr)
 
 ungrouped_df <- readRDS(system.file("extdata",
                                           "ungrouped_iris.rds",

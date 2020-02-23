@@ -1,25 +1,80 @@
-[![Build Status](https://travis-ci.org/condwanaland/summariser.svg?branch=master)](https://travis-ci.org/condwanaland/summariser) [![codecov](https://codecov.io/gh/condwanaland/summariser/branch/master/graph/badge.svg)](https://codecov.io/gh/condwanaland/summariser) [![CRAN version](http://www.r-pkg.org/badges/version/summariser)](https://cran.r-project.org/package=summariser)
 
-# summariser
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+summariser
+==========
 
-`summariser` provides simple functions for calculating the most common summary statistics, particularly confidence intervals. 
+<!-- badges: start -->
+[![Build Status](https://travis-ci.org/condwanaland/summariser.svg?branch=master)](https://travis-ci.org/condwanaland/summariser) [![codecov](https://codecov.io/gh/condwanaland/summariser/branch/master/graph/badge.svg)](https://codecov.io/gh/condwanaland/summariser) <!-- badges: end -->
 
-```R
-data(iris)
-summary_stats(iris, measure = "Sepal.Length")
+`summariser` provides simple functions for calculating the most common summary statistics, particularly confidence intervals.
+
+Installation
+------------
+
+You can install the released version of summariser from [CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("summariser")
 ```
 
-Grouping variables can also be specified after the measure variable to create a row of summary statistics for each level of a factor.
+And the development version from [GitHub](https://github.com/) with:
 
-```R
-data(iris)
-summary_stats(iris, measure = "Sepal.Length", Species)
+``` r
+# install.packages("devtools")
+devtools::install_github("condwanaland/summariser")
 ```
 
-summariser also makes exploratory analysis easier by providing a function to graph the output of `summary_stats` with its confidence intervals
+Using summariser
+----------------
 
-```R
-data(iris)
-sum1 <- summary_stats(iris, measure = "Sepal.Length", Species)
-summary_plot(sum1, x="Species", colour="Species")
+`summariser` is designed to fit into the tidyverse 'piping' style. Just pass a dataframe, and your measurement variable of interest into `summary_stats`.
+
+``` r
+library(summariser)
+#> Loading required package: dplyr
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
+#> Loading required package: ggplot2
+#> Loading required package: lazyeval
+#> Loading required package: plotrix
+iris %>% 
+  summary_stats(Sepal.Length)
+#> # A tibble: 1 x 5
+#>    mean    sd     n     se    ci
+#>   <dbl> <dbl> <int>  <dbl> <dbl>
+#> 1  5.84 0.828   150 0.0676 0.133
+```
+
+If you want to group your dataframe by categorical factors, simply use dplyrs `group_by` before piping to `summary_stats`
+
+``` r
+iris %>%
+  group_by(Species) %>% 
+  summary_stats(Sepal.Length)
+#> # A tibble: 3 x 6
+#>   Species     mean    sd     n     se     ci
+#>   <fct>      <dbl> <dbl> <int>  <dbl>  <dbl>
+#> 1 setosa      5.01 0.352    50 0.0498 0.0977
+#> 2 versicolor  5.94 0.516    50 0.0730 0.143 
+#> 3 virginica   6.59 0.636    50 0.0899 0.176
+```
+
+By default, `summariser` uses a normal distribution to calculate confidence intervals. If you would rather use a t distribution, just pass this to the `type` parameter.
+
+``` r
+iris %>%
+  group_by(Species) %>% 
+  summary_stats(Sepal.Length, type = "t")
+#> # A tibble: 3 x 6
+#>   Species     mean    sd     n     se     ci
+#>   <fct>      <dbl> <dbl> <int>  <dbl>  <dbl>
+#> 1 setosa      5.01 0.352    50 0.0498 0.0977
+#> 2 versicolor  5.94 0.516    50 0.0730 0.143 
+#> 3 virginica   6.59 0.636    50 0.0899 0.176
 ```

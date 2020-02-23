@@ -9,12 +9,15 @@
 #' @param data a data frame
 #' @param measure a numeric variable. Response variable - summary statistics
 #'   will be returned for this variable
+#' @param type a string variable. Controls whether a normal or t distribution is used for CI
+#'   calculation. Defaults to "norm".
 
 #' @export
-#' @examples data(iris)
-#'   summary_stats(iris, measure = Sepal.Length)
-#'   summary_stats(iris, measure = Sepal.Length, Species)
-
+#' @examples
+#' library(summariser)
+#' library(dplyr)
+#' iris %>%
+#'   summary_stats(Sepal.Length)
 summary_stats <- function(data, measure, type){
   UseMethod("summary_stats")
 }
