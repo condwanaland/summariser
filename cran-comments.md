@@ -1,22 +1,16 @@
-## Resubmission
-This is a resubmission. In this version I have
-
-* Put single quotes around 'dplyr' and 'ggplot2' in the DESCRIPTION file.
-
-
 ## Test environments
-* local OS X install, R 3.3.2
+* local OS X install, R 3.6.2
 * win-builder (release)
+* Ubuntu Linux 16.04 LTS, R-release, GCC
+* Fedora Linux, R-devel, clang, gfortran
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
-
-* This is a new release.
+0 errors | 0 warnings | 0 notes
 
 ## Reverse dependencies
 
-This is a new release, so there are no reverse dependencies.
+There are no reverse dependencies.
 
 ---
 
