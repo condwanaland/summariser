@@ -4,17 +4,17 @@
 \alias{summary_stats}
 \title{Calculate summary statistics on a data frame}
 \usage{
+<<<<<<< HEAD:man/summary_stats.Rd
 summary_stats(data, measure, ...)
+=======
+summary_stats(data, measure, type)
+>>>>>>> dplyr_v7:man/summary_stats.Rd
 }
 \arguments{
 \item{data}{a data frame}
 
 \item{measure}{a numeric variable. Response variable - summary statistics
 will be returned for this variable}
-
-\item{...}{a factor variable, or group of factor variables.  Data frame
-will be grouped by this variable, and summary statistics will be produced
-for each group}
 }
 \description{
 Functions from dplyr are used to automate the process of

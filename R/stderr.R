@@ -1,5 +1,7 @@
 #' std_error
 #'
+#' Function to calculate standard errors. Can be used on a vector, but primarily used internally for `summary_stats`
+#'
 #' @param x A vector of numeric values
 #'
 #' @return Numeric vector of length one
@@ -15,7 +17,15 @@
 
 std_error <- function(x){
 
+<<<<<<< HEAD
   if (class(x) != "numeric"){
+=======
+  if (length(x) < 3){
+    stop("There must be at least three observations to compute a standard error")
+  }
+
+  if (!inherits(x, "numeric")){
+>>>>>>> dplyr_v7
     stop("Input must be numeric")
   }
 
