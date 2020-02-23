@@ -1,5 +1,7 @@
 #' std_error
 #'
+#' Function to calculate standard errors. Can be used on a vector, but primarily used internally for `summary_stats`
+#'
 #' @param x A vector of numeric values
 #'
 #' @return Numeric vector of length one
