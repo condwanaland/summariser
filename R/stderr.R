@@ -19,7 +19,7 @@ std_error <- function(x){
     stop("There must be at least three observations to compute a standard error")
   }
 
-  if (class(x) != "numeric"){
+  if (!inherits(x, "numeric")){
     stop("Input must be numeric")
   }
 
