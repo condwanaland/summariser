@@ -19,7 +19,9 @@ group_df <- readRDS(system.file("extdata",
                                           "grouped_iris.rds",
                                           package = "summariser"))
 
-pkg_group_df <- summary_stats(iris, Sepal.Length, Species)
+pkg_group_df <- iris %>%
+  group_by(Species) %>%
+  summary_stats(Sepal.Length)
 
 test_that("Grouped dfs are correctly calculated", {
   expect_equivalent(group_df[, 1], pkg_group_df[, 1])
@@ -37,7 +39,9 @@ triple_grouped_df <- readRDS(system.file("extdata",
                                           "triple_grouped_mtcars.rds",
                                           package = "summariser"))
 
-pkg_triple_grouped_df <- summary_stats(mtcars, hp, am, gear, carb)
+pkg_triple_grouped_df <- mtcars %>%
+  group_by(am, gear, carb) %>%
+  summary_stats(hp)
 
 test_that("Three levels of grouping calculates correctly", {
   expect_equivalent(triple_grouped_df[, 1], pkg_triple_grouped_df[, 1])

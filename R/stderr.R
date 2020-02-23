@@ -18,7 +18,7 @@
 std_error <- function(x){
 
   if (length(x) < 3){
-    stop("There must be at least three observations to compute a standard error")
+    warning("There must be at least three observations to compute a standard error")
   }
 
   if (!inherits(x, "numeric")){
