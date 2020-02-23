@@ -4,11 +4,7 @@
 \alias{summary_stats}
 \title{Calculate summary statistics on a data frame}
 \usage{
-<<<<<<< HEAD:man/summary_stats.Rd
-summary_stats(data, measure, ...)
-=======
 summary_stats(data, measure, type)
->>>>>>> dplyr_v7:man/summary_stats.Rd
 }
 \arguments{
 \item{data}{a data frame}

@@ -17,15 +17,11 @@
 
 std_error <- function(x){
 
-<<<<<<< HEAD
-  if (class(x) != "numeric"){
-=======
   if (length(x) < 3){
     stop("There must be at least three observations to compute a standard error")
   }
 
   if (!inherits(x, "numeric")){
->>>>>>> dplyr_v7
     stop("Input must be numeric")
   }
 
