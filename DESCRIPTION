@@ -1,7 +1,7 @@
 Package: summariser
 Type: Package
 Title: Easy Calculation and Visualisation of Confidence Intervals
-Version: 2.1.0
+Version: 2.2.0
 Authors@R: person("Conor", "Neilson", email="condwanaland@gmail.com", role=
     c("aut", "cre"))
 Maintainer: Conor Neilson <condwanaland@gmail.com>
@@ -11,8 +11,7 @@ Description: Functions to speed up the exploratory analysis of simple
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Imports: dplyr,
-  rlang
+Imports: dplyr
 Suggests: 
     testthat,
     covr
