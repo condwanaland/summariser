@@ -1,3 +1,7 @@
+# summariser 2.1.0
+
+* Maintainece release to make tests compliant with new `dplyr` version
+
 # summariser 2.0.0
 
 * summariser underwent a major rewrite with version 2. It now fits in better with the piping

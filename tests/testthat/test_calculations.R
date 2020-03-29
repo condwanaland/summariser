@@ -40,9 +40,12 @@ triple_grouped_df <- readRDS(system.file("extdata",
                                           "triple_grouped_mtcars.rds",
                                           package = "summariser"))
 
+triple_grouped_df <- ungroup(triple_grouped_df)
+
 pkg_triple_grouped_df <- mtcars %>%
   group_by(am, gear, carb) %>%
-  summary_stats(hp)
+  summary_stats(hp) %>%
+  ungroup()
 
 test_that("Three levels of grouping calculates correctly", {
   expect_equivalent(triple_grouped_df[, 1], pkg_triple_grouped_df[, 1])

@@ -12,6 +12,9 @@
 
 There are no reverse dependencies.
 
+
+This is a maintaience release to keep summariser compliant with the new version of `dplyr` being released.
+
 ---
 
 
