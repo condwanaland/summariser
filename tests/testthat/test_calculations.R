@@ -1,6 +1,7 @@
 context("Testing that correct numbers are returned")
 library(dplyr)
 
+
 ungrouped_df <- readRDS(system.file("extdata",
                                           "ungrouped_iris.rds",
                                           package = "summariser"))
@@ -25,6 +26,7 @@ pkg_group_df <- iris %>%
   summary_stats(Sepal.Length)
 
 test_that("Grouped dfs are correctly calculated", {
+  skip_on_cran()
   expect_equivalent(group_df[, 1], pkg_group_df[, 1])
   expect_equivalent(group_df[, 2], pkg_group_df[, 2])
   expect_equivalent(group_df[, 4], pkg_group_df[, 4])
