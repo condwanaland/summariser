@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-summariser <img src="man/figures/logo.png" align="right" style="width:181px;height:209px;" />
-=============================================================================================
+summariser <img src="man/figures/logo_small.png" align="right" />
+=================================================================
 
 <!-- badges: start -->
 [![Build Status](https://travis-ci.org/condwanaland/summariser.svg?branch=master)](https://travis-ci.org/condwanaland/summariser) [![codecov](https://codecov.io/gh/condwanaland/summariser/branch/master/graph/badge.svg)](https://codecov.io/gh/condwanaland/summariser) <!-- badges: end -->
