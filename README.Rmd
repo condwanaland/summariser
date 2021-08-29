@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 ```
-# summariser <img src="man/figures/logo_small.png" align="right" />
+# summariser <img src='man/figures/logo.png' align="right" height="138" />
 
 <!-- badges: start -->
 [![Build Status](https://travis-ci.org/condwanaland/summariser.svg?branch=master)](https://travis-ci.org/condwanaland/summariser) [![codecov](https://codecov.io/gh/condwanaland/summariser/branch/master/graph/badge.svg)](https://codecov.io/gh/condwanaland/summariser)

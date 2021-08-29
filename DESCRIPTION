@@ -17,3 +17,4 @@ Suggests:
     covr
 RoxygenNote: 7.0.2
 URL: https://github.com/condwanaland/summariser
+BugReports: https://github.com/condwanaland/summariser/issues
